@@ -1,0 +1,28 @@
+# Visual Studio
+.vs/
+*.vc.db
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.ipch
+
+# 빌드 디렉터리
+Debug/
+Release/
+x64/
+x86/
+
+# 빌드 아티팩트
+*.exe
+*.obj
+*.pdb
+*.log
+*.ilk
+*.idb
+*.cache
+*.tlog
+*.aps
+*.ncb
+*.pyc
+*.class
