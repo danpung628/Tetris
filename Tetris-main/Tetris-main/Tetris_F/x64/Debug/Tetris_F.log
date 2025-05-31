@@ -1,2 +1,4 @@
 ﻿  Game.cpp
-  Tetris_F.vcxproj -> C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\x64\Debug\Tetris_F.exe
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Game.cpp(310,13): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Game.cpp(311,13): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Tetris_F.vcxproj -> D:\work\Tetris\Tetris-main\Tetris-main\x64\Debug\Tetris_F.exe

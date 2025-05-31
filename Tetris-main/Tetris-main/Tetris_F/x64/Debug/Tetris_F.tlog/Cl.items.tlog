@@ -1,8 +1,9 @@
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\Block.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Block.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\Board.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Board.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\Config.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Config.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\ConsoleUtils.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\ConsoleUtils.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\Game.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Game.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\InputHandler.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\InputHandler.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\main.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\main.obj
-C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\Renderer.cpp;C:\Users\user\Desktop\객지프\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Renderer.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\BlackoutManager.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\BlackoutManager.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Block.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Block.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Board.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Board.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Config.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Config.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\ConsoleUtils.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\ConsoleUtils.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Game.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Game.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\InputHandler.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\InputHandler.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\main.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\main.obj
+D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\Renderer.cpp;D:\work\Tetris\Tetris-main\Tetris-main\Tetris_F\x64\Debug\Renderer.obj

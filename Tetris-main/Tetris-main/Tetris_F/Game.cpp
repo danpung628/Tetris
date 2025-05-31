@@ -72,7 +72,7 @@ void Game::GameInit()
 	_clearLines = gameLevel[_level - 1]._clearLines;
 	_frameRate = gameLevel[_level - 1]._frameRate;
 	_stickRate = gameLevel[_level - 1]._stickRate;
-	_stage = 3; // 일단 stage 3 부터 시작하게 변경
+	_stage = 4; // 일단 stage 3 부터 시작하게 변경
 
 	// 블록 관련
 	if (_currentBlock == nullptr)
@@ -298,16 +298,47 @@ void Game::Stage3()	// 난이도 별로 중간고사 clearline 수 변경,
 	ClearStage();
 }
 
+void Game::Stage4() {
+	_isReverseControl = true; //  조작키 반전 활성화
 
-void Game::Stage4()
-{
-	std::cout << "Stage4" << std::endl;
-	int input;
-	std::cout << "> ";
-	std::cin >> input;
-	_stage++;
-	ConsoleUtils::clearScreen();
+	MapInit();
+	PrintStageInfo();
+	RenderBoardsAndNextBlock();
+
+	bool blackout60Started = false;// 60% 클리어 라인 암전 시작 여부
+	bool blackout30Started = false;
+	int line60 = gameLevel[_level - 1]._clearLines * 0.6;
+	int line30 = gameLevel[_level - 1]._clearLines * 0.3;
+
+	while (_clearLines > 0) {
+		
+		//  클리어 라인이 60% 이하일 때 첫 암전 시작
+		if (!blackout60Started && _clearLines <= line60) {
+			_renderer->ShowMessage("졸음이 몰려옵니다...", 10, 0);
+			_blackout.Start();
+			blackout60Started = true;
+		}
+
+		//  클리어 라인이 30% 이하일 때 두 번째 암전 시작
+		if (!blackout30Started && _clearLines <= line30) {
+			_renderer->ShowMessage("졸음이 몰려옵니다...", 10, 0);
+			_blackout.Start();
+			blackout30Started = true;
+		}
+
+		_blackout.Update(); // 암전 상태 갱신
+
+		//  블록 떨어뜨리는 로직 (암전 상태 전달)
+		int hits = PlayGameTurn(&_blackout);
+
+		PrintStageInfo();
+	}
+
+	_isReverseControl = false; // 조작 반전 해제
+	ClearStage();
 }
+
+
 
 void Game::Story1()
 {
@@ -357,6 +388,13 @@ void Game::Ending()
 void Game::ProcessInput()
 {
 	int key = _inputHandler->GetKeyPressed();
+	//키 반전 구현 
+	if (_isReverseControl) {
+		if (key == Config::KEY_LEFT) key = Config::KEY_RIGHT;
+		else if (key == Config::KEY_RIGHT) key = Config::KEY_LEFT;
+		
+	}
+
 	switch (key) {
 	case Config::KEY_LEFT:
 		_currentBlock->Move(-1, 0);
@@ -394,7 +432,7 @@ void Game::ProcessInput()
 }
 
 
-int Game::PlayGameTurn()
+int Game::PlayGameTurn(const BlackoutManager* blackout)
 {
 	_renderer->DrawBlock(*_mainBoard, *_currentBlock, 1);
 	ConsoleUtils::sleep(_frameRate);
@@ -402,7 +440,7 @@ int Game::PlayGameTurn()
 
 	ProcessInput();
 	_currentBlock->Move(0, 1);
-	_renderer->DrawBlock(*_mainBoard, *_currentBlock, 1);
+	_renderer->DrawBoard(*_mainBoard, _currentBlock, &_blackout);
 
 	if (((MainBoard*)_mainBoard)->IsCollision(*_currentBlock))
 	{
@@ -418,7 +456,7 @@ int Game::PlayGameTurn()
 		//_nextBlock = new Block(rand() % 7);
 		_nextBlock = new Block(0);
 
-		_renderer->DrawBoard(*_mainBoard);
+		_renderer->DrawBoard(*_mainBoard, _currentBlock, &_blackout);
 		_renderer->DrawBoard(*_nextBoard);
 		_renderer->DrawBlock(*_nextBoard, *_nextBlock, 2);
 
