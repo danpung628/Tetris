@@ -4,7 +4,7 @@
 #include "Block.h"
 #include "Renderer.h"
 #include "InputHandler.h"
-
+#include "BlackoutManager.h"
 #include "ConsoleUtils.h"
 #include <iostream>
 
@@ -38,7 +38,6 @@ public:
 	void Stage3();
 	void Stage4();
 
-	// Story
 	void Story1();
 	void Story2();
 	void Story3();
@@ -47,7 +46,7 @@ public:
 
 
 	void ProcessInput();
-	int PlayGameTurn();  
+	int PlayGameTurn(const BlackoutManager* blackout = nullptr);
 	void PrintStageInfo();			// 상태 메시지 출력 
 	void EraseStageInfo();			// 상태 메세지 지움
 	void RenderBoardsAndNextBlock(); //보드 및 다음 블럭 출력
@@ -71,4 +70,6 @@ public:
 	int _stickRate;
 	
 	int _stage;
+	bool _isReverseControl = false;
+	BlackoutManager _blackout;
 };

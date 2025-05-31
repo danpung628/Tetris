@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlackoutManager.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Config.cpp" />
@@ -134,6 +135,7 @@
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlackoutManager.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Config.h" />
